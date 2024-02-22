@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<nav>
+<ul>
+<li><a href='#'>日志</a></li>
+<li><a href='#'>开发</a></li>
+</ul>
+</nav>
+<head>
+<meta charset="utf-8">
+<title>我的个人博客</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<style>
+        body {
+            font-family: Verdana, sans-serif; 
+        }
+        h1 {
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+        }
+nav {
+  background-color: #fde3f5;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 100;
+}
+
+nav li {
+  float: right;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+    </style>
+</head>
+<body>
+<h1>Welcome</h1>
+<p>这是我的第一篇文章，以后要通过学习来逐渐完善我的博客</p>
+<p>请输入你要进行冒泡排序的数组(如 5,3,8,4,6，用英文逗号隔开)：</p>
+<input id="inputArray" type="text">
+<button onclick="BubbleSort()">开始冒泡排序</button>
+<p id="result"></p>
+</body>
+<script>
+ function BubbleSort(){
+      let inputArray = document.getElementById("inputArray").value;
+      let array=inputArray.split(',').map(Number);
+      for(let i=0;i<array.length;i++){
+            for(let j=0;j<array.length-i-1;j++){
+                  if(array[j]>array[j+1]){
+                        let temp = array[j+1];
+                        array[j+1] = array[j];
+                        array[j]=temp;
+                  }
+            }
+      }
+       document.getElementById("result").innerHTML = "排序后的数组为：[" + array.join(",") + "]";
+        
+}
+</script>
+</html>
